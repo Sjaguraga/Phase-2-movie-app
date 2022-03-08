@@ -7,17 +7,17 @@ function NavBar() {
     <Navbar bg="light" variant="light">
       <Container>
         <Nav className="me-auto">
-          <Nav.Link>
+          <div className="home">
             <NavLink exact to="/">
               Home
             </NavLink>
-          </Nav.Link>
-          <Nav.Link>
+          </div>
+          <div className="home">
             <NavLink to="/movielist">Movie List</NavLink>
-          </Nav.Link>
-          <Nav.Link>
+          </div>
+          <div className="home">
             <NavLink to="/favoritemovies">Favorite Movies</NavLink>
-          </Nav.Link>
+          </div>
         </Nav>
       </Container>
     </Navbar>

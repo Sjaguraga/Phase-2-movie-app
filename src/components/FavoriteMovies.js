@@ -2,7 +2,7 @@ import React from "react";
 import Movies from "./Movies";
 import { v4 as uuid } from "uuid";
 
-const FavoriteMovies = ({ favorites, setFavoriteMovies }) => {
+const FavoriteMovies = ({ favorites, addFavoriteMovies }) => {
   return (
     <div className="image-container d-flex justify-content-start m-3">
       {favorites.map((movie) => {
@@ -10,7 +10,7 @@ const FavoriteMovies = ({ favorites, setFavoriteMovies }) => {
           <Movies
             key={uuid()}
             movie={movie}
-            setFavoriteMovies={setFavoriteMovies}
+            addFavoriteMovies={addFavoriteMovies}
           />
         );
       })}

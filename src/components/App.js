@@ -9,10 +9,10 @@ import "../index.css";
 function App() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [page, setPage] = useState("/");
+  const [searchTerm, setSearchTerm] = useState("spider man");
 
   const getMovieRequest = async () => {
-    const url = "http://www.omdbapi.com/?s=spider man&apikey=6e4caee6";
+    const url = `http://www.omdbapi.com/?s=${searchTerm}&apikey=6e4caee6`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -22,17 +22,21 @@ function App() {
 
   useEffect(() => {
     getMovieRequest();
-  }, []);
+  }, [searchTerm]);
 
   function addFavoriteMovies(movieObj) {
     if (favorites.includes(movieObj) === false) {
       setFavorites([...favorites, movieObj]);
     }
   }
+  function handleAddMovie(newMovie) {
+    const updatedMovieArray = [...movies, newMovie];
+    setSearchTerm(updatedMovieArray);
+  }
 
   return (
     <div>
-      <NavBar onChangePage={setPage} />
+      <NavBar />
       <Switch>
         <Route path="/favoritemovies">
           <FavoriteMovies
@@ -41,7 +45,13 @@ function App() {
           />
         </Route>
         <Route path="/movielist">
-          <MovieList movies={movies} addFavoriteMovies={addFavoriteMovies} />
+          <MovieList
+            movies={movies}
+            addFavoriteMovies={addFavoriteMovies}
+            handleAddMovie={handleAddMovie}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
         </Route>
         <Route exact path="/">
           <Home />

@@ -1,3 +1,32 @@
 body {
-  background-color: white;
+  margin: 0;
+  background: #141414;
+  color: white;
+}
+
+.list {
+  display: flex;
+  overflow: auto;
+  flex-direction: row;
+}
+
+.movies {
+  height: 400px;
+  margin: 5px;
+}
+
+.favs {
+  display: flex;
+  height: 400px;
+  margin: 25px 5px 25px 5px;
+  overflow: auto;
+}
+
+img {
+  height: 300px;
+  width: 180px;
+}
+
+.home {
+  margin: 5px 10px 5px 10px;
 }

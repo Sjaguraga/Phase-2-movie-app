@@ -2,9 +2,10 @@ import React from "react";
 import Movies from "./Movies";
 import { v4 as uuid } from "uuid";
 
-const FavoriteMovies = ({ favorites, addFavoriteMovies }) => {
+const FavoriteMovies = ({ favorites, addFavoriteMovies, removeMovie }) => {
   return (
-    <div className="image-container d-flex justify-content-start m-3">
+    <div onClick={() => removeMovie(favorites)} className="movies">
+      <h1 className="listofmovies">List of Favorite Movies</h1>
       {favorites.map((movie) => {
         return (
           <Movies

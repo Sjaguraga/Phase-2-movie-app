@@ -4,24 +4,24 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import MovieList from "./MovieList";
 import FavoriteMovies from "./FavoriteMovies";
+import AddMovie from "./AddMovie";
 import "../index.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("spider man");
+  const [searchTerm, setSearchTerm] = useState("marvel");
 
-  const getMovieRequest = async () => {
+  const getMovieRequest = async (searchTerm) => {
     const url = `http://www.omdbapi.com/?s=${searchTerm}&apikey=6e4caee6`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    console.log(responseJson);
     setMovies(responseJson.Search);
   };
 
   useEffect(() => {
-    getMovieRequest();
+    getMovieRequest(searchTerm);
   }, [searchTerm]);
 
   function addFavoriteMovies(movieObj) {
@@ -34,6 +34,34 @@ function App() {
     setSearchTerm(updatedMovieArray);
   }
 
+  // function handleNewMovie(movie) {
+  //   fetch(patientsAPI, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(movie),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setMovies([...movies, json]);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }
+
+  function removeMovie(removeItem) {
+    setFavorites(
+      favorites.filter((item) => {
+        return item.id !== removeItem.id;
+      })
+    );
+    setMovies(
+      movies.filter((item) => {
+        return item.id !== removeItem.id;
+      })
+    );
+  }
+
   return (
     <div>
       <NavBar />
@@ -42,6 +70,7 @@ function App() {
           <FavoriteMovies
             favorites={favorites}
             addFavoriteMovies={addFavoriteMovies}
+            removeMovie={removeMovie}
           />
         </Route>
         <Route path="/movielist">
@@ -51,10 +80,14 @@ function App() {
             handleAddMovie={handleAddMovie}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
+            removeMovie={removeMovie}
           />
         </Route>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/AddMovie">
+          <AddMovie />
         </Route>
       </Switch>
     </div>

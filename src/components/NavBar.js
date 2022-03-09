@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar bg="dark" variant="light">
       <Container>
         <Nav className="me-auto">
           <div className="home">
@@ -17,6 +17,9 @@ function NavBar() {
           </div>
           <div className="home">
             <NavLink to="/favoritemovies">Favorite Movies</NavLink>
+          </div>
+          <div className="home">
+            <NavLink to="/addmovie">Add a new movie</NavLink>
           </div>
         </Nav>
       </Container>

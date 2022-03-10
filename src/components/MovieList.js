@@ -6,7 +6,6 @@ const MovieList = ({ movies, addFavoriteMovies, setSearchTerm }) => {
   const [input, setInput] = useState("");
 
   function clickHandler() {
-    console.log("clicked");
     setSearchTerm(input);
   }
   // console.log(movies)

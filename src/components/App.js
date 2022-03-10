@@ -7,7 +7,7 @@ import FavoriteMovies from "./FavoriteMovies";
 import AddMovie from "./AddMovie";
 import "../index.css";
 
-const url = 'http://localhost:3000/Movies';
+const url = "http://localhost:3000/Movies";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -15,11 +15,12 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("marvel");
 
   const getMovieRequest = async (searchTerm) => {
-    
-    const response = await fetch(url);
+    const response = await fetch(
+      `http://www.omdbapi.com/?s=${searchTerm}&apikey=6e4caee6`
+    );
     const responseJson = await response.json();
-    // console.log(responseJson);
-    setMovies(responseJson);
+    console.log(responseJson);
+    setMovies(responseJson.Search);
   };
 
   useEffect(() => {

@@ -37,7 +37,7 @@ nav a {
 
 nav a:hover,
 nav a:active {
-  color: #800000;
+  color: #fa5959;
 }
 
 .project-item {
@@ -74,7 +74,7 @@ img {
   border-radius: 10px;
   width: 250px;
   height: 350px;
-  display: inline-block;
+
   margin: 25px 10px;
 
   transition: 1s ease;
@@ -85,7 +85,7 @@ img {
   align-items: center;
 }
 body {
-  background: hsla(0, 0%, 0%, 0.856);
+  background: hsla(0, 0%, 0%, 0.692);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -98,7 +98,7 @@ body {
 
 .searchTerm {
   width: 30%;
-  border: 3px solid green;
+  border: 3px solid #000000;
   border-right: none;
   padding: 8px;
   height: 25px;
@@ -115,7 +115,7 @@ body {
   border-radius: 5px;
   height: 25px;
   color: white;
-  background-color: #9dbfaf;
+  background-color: #5976fabe;
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -141,4 +141,7 @@ img:hover {
 
 .listofmovies {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  overflow: auto;
+  justify-content: center;
 }

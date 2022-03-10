@@ -4,8 +4,7 @@ import FavMovieCard from "./FavMovieCard";
 
 const FavoriteMovies = ({ favorites, removeMovie }) => {
   return (
-    <div className="movies">
-      <h1 className="listofmovies">List of Favorite Movies</h1>
+    <div className="listofmovies">
       {favorites.map((movie) => {
         return (
           <FavMovieCard key={uuid()} movie={movie} removeMovie={removeMovie} />

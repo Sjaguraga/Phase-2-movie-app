@@ -1,6 +1,61 @@
-.home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: rgb(0, 0, 0);
+  height: 100vh;
+  width: 100vw;
+}
+
+.home-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #30cf1b;
+  font-size: 124px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+.home-title::before {
+  content: "MOVIE NIGHT";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    rgb(201, 198, 0) 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+.home-title::after {
+  content: "MOVIE NIGHT";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    rgb(0, 30, 201) 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+.home-title:hover:after {
+  top: -10px;
+  left: -10px;
 }

@@ -1,18 +1,14 @@
 import React from "react";
-import Movies from "./Movies";
 import { v4 as uuid } from "uuid";
+import FavMovieCard from "./FavMovieCard";
 
-const FavoriteMovies = ({ favorites, addFavoriteMovies, removeMovie }) => {
+const FavoriteMovies = ({ favorites, removeMovie }) => {
   return (
-    <div onClick={() => removeMovie(favorites)} className="movies">
+    <div className="movies">
       <h1 className="listofmovies">List of Favorite Movies</h1>
       {favorites.map((movie) => {
         return (
-          <Movies
-            key={uuid()}
-            movie={movie}
-            addFavoriteMovies={addFavoriteMovies}
-          />
+          <FavMovieCard key={uuid()} movie={movie} removeMovie={removeMovie} />
         );
       })}
     </div>

@@ -4,7 +4,7 @@ const AddMovie = () => {
   return (
     <div className="input">
       <input className="searchTerm" placeholder="type in new movie..."></input>
-      <button className="searchButton"> ♥</button>
+      <button className="searchButton">add</button>
     </div>
   );
 };

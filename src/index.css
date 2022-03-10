@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  background: #141414;
-}
-
 h1,
 h2,
 h3,
@@ -25,62 +19,25 @@ p {
 }
 
 nav {
-  background-color: rgb(255, 207, 16);
+  background-color: hsla(0, 0%, 0%, 0.349);
 }
 
 nav a {
   display: inline-block;
+
   margin: 1rem 2rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1em;
 
-  color: rgb(190, 190, 190);
+  color: rgb(255, 255, 255);
 
   transition: 0.1s;
 }
 
 nav a:hover,
 nav a:active {
-  color: tomato;
-}
-
-#home {
-  height: 50vh;
-  min-height: 400px;
-  background-color: cornsilk;
-}
-
-#home,
-#about,
-#projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 1rem;
-}
-
-#about img {
-  max-height: 50%;
-}
-
-#about a {
-  display: block;
-}
-
-#projects {
-  background-color: cornsilk;
-  min-height: 400px;
-}
-
-#project-list {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 800px;
+  color: #800000;
 }
 
 .project-item {
@@ -122,23 +79,28 @@ img {
 
   transition: 1s ease;
 }
-
+.link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body {
-  background: #141414;
+  background: hsla(0, 0%, 0%, 0.856);
   font-family: "Open Sans", sans-serif;
 }
 
-.search {
+.search-stuff {
   width: 100%;
-  position: relative;
+  margin-top: 25px;
   display: flex;
+  justify-content: center;
 }
 
 .searchTerm {
   width: 30%;
-  border: 3px solid #00b4cc;
+  border: 3px solid green;
   border-right: none;
-  padding: 5px;
+  padding: 8px;
   height: 25px;
   border-radius: 5px 0 0 5px;
   outline: none;
@@ -146,19 +108,14 @@ body {
 }
 
 .searchTerm:focus {
-  color: #00b4cc;
+  color: blue;
 }
 
 .searchButton {
-  width: 25px;
-  height: 30px;
-  border: 1px solid #00b4cc;
-  background: #00b4cc;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+  background-color: #9dbfaf;
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -184,14 +141,4 @@ img:hover {
 
 .listofmovies {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-
-button {
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: white;
-  background-color: #f15946;
-  color: white;
-  font-family: "Ultra", serif;
-  font-size: 1rem;
 }

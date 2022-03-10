@@ -29,10 +29,6 @@ function App() {
       setFavorites([...favorites, movieObj]);
     }
   }
-  function handleAddMovie(newMovie) {
-    const updatedMovieArray = [...movies, newMovie];
-    setSearchTerm(updatedMovieArray);
-  }
 
   // function handleNewMovie(movie) {
   //   fetch(patientsAPI, {
@@ -50,16 +46,8 @@ function App() {
   // }
 
   function removeMovie(removeItem) {
-    setFavorites(
-      favorites.filter((item) => {
-        return item.id !== removeItem.id;
-      })
-    );
-    setMovies(
-      movies.filter((item) => {
-        return item.id !== removeItem.id;
-      })
-    );
+    console.log(removeItem);
+    setFavorites(favorites.filter((el) => el.imdbID !== removeItem.imdbID));
   }
 
   return (
@@ -67,20 +55,14 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/favoritemovies">
-          <FavoriteMovies
-            favorites={favorites}
-            addFavoriteMovies={addFavoriteMovies}
-            removeMovie={removeMovie}
-          />
+          <FavoriteMovies favorites={favorites} removeMovie={removeMovie} />
         </Route>
         <Route path="/movielist">
           <MovieList
             movies={movies}
             addFavoriteMovies={addFavoriteMovies}
-            handleAddMovie={handleAddMovie}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
-            removeMovie={removeMovie}
           />
         </Route>
         <Route exact path="/">

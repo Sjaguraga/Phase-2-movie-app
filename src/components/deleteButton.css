@@ -1,0 +1,25 @@
+.delete-button {
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-block;
+  font-family: "Pacifico", cursive;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  background-color: #e74c3c;
+  border-bottom: 5px solid #bd3e31;
+  text-shadow: 0px -2px #bd3e31;
+}
+
+.delete-button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  color: #fff;
+  border-bottom: 1px solid;
+}

@@ -6,19 +6,20 @@ const MovieList = ({ movies, addFavoriteMovies, setSearchTerm }) => {
   const [input, setInput] = useState("");
 
   function clickHandler() {
+    console.log("clicked");
     setSearchTerm(input);
   }
 
   return (
-    <div className="input">
-      <div>
+    <div>
+      <div className="search-stuff">
         <input
           onChange={(event) => setInput(event.target.value)}
           className="searchTerm"
           placeholder="type to search movies..."
         ></input>
         <button className="searchButton" onClick={clickHandler} type="click">
-          ♥
+          submit
         </button>
       </div>
       <div className="movies">

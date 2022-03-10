@@ -10,6 +10,7 @@ function Home() {
   return (
     <div className="home">
       <h1 style={mystyle}>MOVIE APP</h1>
+      <img></img>
     </div>
   );
 }

@@ -7,17 +7,19 @@ import FavoriteMovies from "./FavoriteMovies";
 import AddMovie from "./AddMovie";
 import "../index.css";
 
+const url = 'http://localhost:3000/Movies';
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [searchTerm, setSearchTerm] = useState("marvel");
 
   const getMovieRequest = async (searchTerm) => {
-    const url = `http://www.omdbapi.com/?s=${searchTerm}&apikey=6e4caee6`;
+    
     const response = await fetch(url);
     const responseJson = await response.json();
-
-    setMovies(responseJson.Search);
+    // console.log(responseJson);
+    setMovies(responseJson);
   };
 
   useEffect(() => {
@@ -30,20 +32,20 @@ function App() {
     }
   }
 
-  // function handleNewMovie(movie) {
-  //   fetch(patientsAPI, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(movie),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       setMovies([...movies, json]);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }
+  function handleNewMovie(movie) {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(movie),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setMovies([...movies, json]);
+      })
+      .catch((err) => console.error(err));
+  }
 
   function removeMovie(removeItem) {
     console.log(removeItem);
@@ -69,7 +71,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/AddMovie">
-          <AddMovie />
+          <AddMovie handleNewMovie={handleNewMovie} />
         </Route>
       </Switch>
     </div>

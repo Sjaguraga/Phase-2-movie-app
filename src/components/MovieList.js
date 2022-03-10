@@ -9,7 +9,7 @@ const MovieList = ({ movies, addFavoriteMovies, setSearchTerm }) => {
     console.log("clicked");
     setSearchTerm(input);
   }
-
+  // console.log(movies)
   return (
     <div>
       <div className="search-stuff">

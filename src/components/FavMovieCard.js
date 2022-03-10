@@ -4,7 +4,7 @@ const FavMovieCard = ({ movie, removeMovie }) => {
   return (
     <div>
       <img src={movie.Poster} alt={movie.Title}></img>
-      <button onClick={() => removeMovie(movie)}>
+      <button className="delete-button" onClick={() => removeMovie(movie)}>
         Remove from Favortie List
       </button>
     </div>

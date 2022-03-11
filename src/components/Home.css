@@ -15,13 +15,17 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  color: #30cf1b;
+  color: rgb(255, 255, 255);
   font-size: 124px;
   letter-spacing: 8px;
   cursor: pointer;
 }
 
-.home-title::before {
+p {
+  font-size: 10px;
+}
+
+/* .home-title::before {
   content: "MOVIE NIGHT";
   position: absolute;
   color: transparent;
@@ -53,9 +57,10 @@ body {
   top: 0px;
   left: 0px;
   transition: 1s;
-}
+} */
 
-.home-title:hover:after {
-  top: -10px;
-  left: -10px;
-}
+/* .home-title:hover {
+  color: rgb(3, 24, 117);
+  border-bottom: black;
+  text-shadow: black;
+} */

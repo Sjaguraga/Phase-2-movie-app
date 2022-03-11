@@ -43,14 +43,20 @@ function App() {
     })
       .then((response) => response.json())
       .then((json) => {
-        setMovies([...movies, json]);
+        setFavorites([...favorites, json]);
       })
       .catch((err) => console.error(err));
   }
 
+  useEffect(() => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => setFavorites(data));
+  }, []);
+
   function removeMovie(removeItem) {
     console.log(removeItem);
-    setFavorites(favorites.filter((el) => el.imdbID !== removeItem.imdbID));
+    setFavorites(favorites.filter((el) => el.Poster !== removeItem.Poster));
   }
 
   return (
